@@ -20,7 +20,7 @@ class Transfer
       @sender.balance=(@sender.balance)-@amount
       @receiver.balance=(@receiver.balance)+@amount
       @transfers[:receiver]<<@receiver
-      @transfers[:sender]<<@sender 
+      @transfers[:sender]<<@sender
       @transfers[:amount]<<@amount
       @status= "complete"
     else
