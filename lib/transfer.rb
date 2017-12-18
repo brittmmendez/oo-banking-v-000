@@ -10,7 +10,18 @@ class Transfer
   end
 
   def valid?
-    @sender.valid? and @receiver.valid?
+    if @sender.valid? and @receiver.valid?
+      self.execute_transaction
+  end
+
+  def execute_transaction
+    if valid?
+      @sender.balance=(@sender.balance)-@amount
+      @receiver.balance=(@receiver.balance)+@amount
+      @status= "complete"
+    else
+      reject
+    end
   end
 
 end
