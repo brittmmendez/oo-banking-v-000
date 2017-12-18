@@ -25,7 +25,7 @@ class BankAccount
     end
 
     def close_account
-      #can close its account (FAILED - 4)
+      self.status="closed"
     end
 
 end
